@@ -112,5 +112,9 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name | quote }}
     app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
     app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+  annotations:
+    {{- if .Values.agents.rbac.roleArn -}}
+    "eks.amazonaws.com/role-arn": {{ .Values.agents.rbac.roleArn | quote }}
+    {{- end -}}
   name: {{ template "datadog.fullname" . }}
 {{- end -}}

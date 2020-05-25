@@ -404,6 +404,12 @@ clusterAgent:
     #
     serviceAccountName: default
 
+    ## @param roleArn - string - optional
+    ## if set, the generated ServiceAccount get's the needed AWS annotation
+    ## See https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html
+    #
+    roleArn: ""
+
   ## @param metricsProvider - object - required
   ## Enable the metricsProvider to be able to scale based on metrics in Datadog
   #
