@@ -1,5 +1,13 @@
 # Datadog changelog
 
+## 2.3.8
+
+* Fix templating errors when `clusterAgent.datadog_cluster_yaml` is being used.
+
+## 2.3.7
+
+* Fix an agent warning at startup because of a deprecated parameter
+
 ## 2.3.6
 
 * Add `affinity` parameter in `values.yaml` for cluster agent deployment
