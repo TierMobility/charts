@@ -385,7 +385,7 @@ clusterAgent:
     ## @param tag - string - required
     ## Define the Cluster-Agent version to use.
     #
-    tag: 1.5.2
+    tag: 1.6.0
 
     ## @param pullPolicy - string - required
     ## The Kubernetes pull policy.
@@ -540,6 +540,14 @@ clusterAgent:
   #
   useHostNetwork:  # true
 
+  ## @param dnsConfig - list of objects - optional
+  ## specify dns configuration options for datadog cluster agent containers e.g ndots
+  ## ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config
+  dnsConfig:
+  #  options:
+  #  - name: ndots
+  #    value: "1"
+
   ## @param volumes - list of objects - optional
   ## Specify additional volumes to mount in the cluster-agent container
   #
@@ -591,7 +599,7 @@ agents:
     ## Define the Agent version to use.
     ## Use 7-jmx to enable jmx fetch collection
     #
-    tag: 7.19.0
+    tag: 7.20.2
 
     ## @param doNotCheckTag - boolean - optional
     ## By default, the version passed in agents.image.tag is checked
@@ -796,6 +804,14 @@ agents:
   #
   useHostNetwork:  # true
 
+  ## @param dnsConfig - list of objects - optional
+  ## specify dns configuration options for datadog cluster agent containers e.g ndots
+  ## ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config
+  dnsConfig:
+  #  options:
+  #  - name: ndots
+  #    value: "1"
+
   ## @param podAnnotations - list of key:value strings - optional
   ## Annotations to add to the DaemonSet's Pods
   #
@@ -898,7 +914,7 @@ clusterChecksRunner:
     ## Define the Agent version to use.
     ## Use 7-jmx to enable jmx fetch collection
     #
-    tag: 7.19.0
+    tag: 7.20.2
 
     ## @param pullPolicy - string - required
     ## The Kubernetes pull policy.
@@ -968,6 +984,14 @@ clusterChecksRunner:
     rollingUpdate:
       maxSurge: 1
       maxUnavailable: 0
+
+  ## @param dnsConfig - list of objects - optional
+  ## specify dns configuration options for datadog cluster agent containers e.g ndots
+  ## ref: https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-dns-config
+  dnsConfig:
+  #  options:
+  #  - name: ndots
+  #    value: "1"
 
   ## @param nodeSelector - object - optional
   ## Allow the ClusterChecks Deployment to schedule on selected nodes

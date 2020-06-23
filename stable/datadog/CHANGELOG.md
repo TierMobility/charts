@@ -1,5 +1,22 @@
 # Datadog changelog
 
+## 2.3.12
+
+* Fix endpoints checks scheduling between agent and cluster check runners
+* Cluster Check Runner now runs without s6 (similar to other agents)
+
+## 2.3.11
+
+* Bump the default version of the agent docker images
+
+## 2.3.10
+
+* Add dnsConfig options to all containers
+
+## 2.3.9
+
+* Add `clusterAgent.podLabels` variable to add labels to the Cluster Agent Pod(s)
+
 ## 2.3.8
 
 * Fix templating errors when `clusterAgent.datadog_cluster_yaml` is being used.
